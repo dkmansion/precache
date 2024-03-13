@@ -498,12 +498,12 @@ class PreCache(object):
     # IPSW info is pulled from IPSW.me
     def parse_ipsw(self, model=None):
         try:
-            url = 'https://api.ipsw.me/v2.1/%s/latest/url' % (model)
+            url = 'https://api.ipsw.me/v4/%s/latest/url' % (model)
             req = self.url_request(url)
             url = req.read()
             req.close()
 
-            version = 'https://api.ipsw.me/v2.1/%s/latest/version' % (model)
+            version = 'https://api.ipsw.me/v4/%s/latest/version' % (model)
             req = self.url_request(version)
             version = req.read()
             req.close()
